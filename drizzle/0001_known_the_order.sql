@@ -1,0 +1,1 @@
+ALTER TABLE `flashcard` DROP COLUMN `category`;
