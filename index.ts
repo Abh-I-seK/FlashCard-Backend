@@ -10,7 +10,12 @@ import { z } from 'zod';
 const app = express()
 const port = 3000
 app.use(bodyParser.json())
-app.use(cors())
+app.use(
+    cors({
+      origin: ["https://flash-card-frontend-opal.vercel.app", "http://localhost:5173"],
+      methods: ["GET", "POST", "PUT", "DELETE"],
+    })
+  );
 dotenv.config();
 
 function middleware(req : express.Request, res : express.Response, next : express.NextFunction){
